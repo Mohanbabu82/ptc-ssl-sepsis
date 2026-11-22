@@ -1,0 +1,243 @@
+{
+  "accepted": [
+    "C1_MAP_formula",
+    "C2_BP_ordering",
+    "C3_Henderson_Hasselbalch",
+    "C4_Hct_3xHgb",
+    "C5_bilirubin_direct_le_total",
+    "C6_SaO2_vs_SpO2"
+  ],
+  "per_protocol": {
+    "pooled": {
+      "C1_MAP_formula": {
+        "vars": [
+          "MAP",
+          "SBP",
+          "DBP"
+        ],
+        "kind": "eq",
+        "tol": 10.0,
+        "unit": "mmHg",
+        "n_train": 734555,
+        "offset": 0.0,
+        "scale": 3.9535961151123047
+      },
+      "C2_BP_ordering": {
+        "vars": [
+          "SBP",
+          "MAP",
+          "DBP"
+        ],
+        "kind": "ineq",
+        "tol": 0.0,
+        "unit": "mmHg",
+        "n_train": 734555,
+        "offset": 0.0,
+        "scale": 7.413000106811523
+      },
+      "C3_Henderson_Hasselbalch": {
+        "vars": [
+          "pH",
+          "HCO3",
+          "PaCO2"
+        ],
+        "kind": "eq",
+        "tol": 0.05,
+        "unit": "pH units",
+        "n_train": 12394,
+        "offset": 0.003158092498779297,
+        "scale": 0.02900369092822075
+      },
+      "C4_Hct_3xHgb": {
+        "vars": [
+          "Hct",
+          "Hgb"
+        ],
+        "kind": "eq",
+        "tol": 3.0,
+        "unit": "% points",
+        "n_train": 78323,
+        "offset": -0.20000076293945312,
+        "scale": 1.3343422412872314
+      },
+      "C5_bilirubin_direct_le_total": {
+        "vars": [
+          "Bilirubin_direct",
+          "Bilirubin_total"
+        ],
+        "kind": "ineq",
+        "tol": 0.0,
+        "unit": "mg/dL",
+        "n_train": 1850,
+        "offset": 0.0,
+        "scale": 0.4447801113128662
+      },
+      "C6_SaO2_vs_SpO2": {
+        "vars": [
+          "SaO2",
+          "O2Sat"
+        ],
+        "kind": "eq",
+        "tol": 4.0,
+        "unit": "% points",
+        "n_train": 35142,
+        "offset": -1.5,
+        "scale": 2.2238998413085938
+      }
+    },
+    "A2B": {
+      "C1_MAP_formula": {
+        "vars": [
+          "MAP",
+          "SBP",
+          "DBP"
+        ],
+        "kind": "eq",
+        "tol": 10.0,
+        "unit": "mmHg",
+        "n_train": 346169,
+        "offset": -0.6666641235351562,
+        "scale": 3.2122962474823
+      },
+      "C2_BP_ordering": {
+        "vars": [
+          "SBP",
+          "MAP",
+          "DBP"
+        ],
+        "kind": "ineq",
+        "tol": 0.0,
+        "unit": "mmHg",
+        "n_train": 346169,
+        "offset": 0.0,
+        "scale": 5.9303998947143555
+      },
+      "C3_Henderson_Hasselbalch": {
+        "vars": [
+          "pH",
+          "HCO3",
+          "PaCO2"
+        ],
+        "kind": "eq",
+        "tol": 0.05,
+        "unit": "pH units",
+        "n_train": 13964,
+        "offset": 0.005177021026611328,
+        "scale": 0.028900474309921265
+      },
+      "C4_Hct_3xHgb": {
+        "vars": [
+          "Hct",
+          "Hgb"
+        ],
+        "kind": "eq",
+        "tol": 3.0,
+        "unit": "% points",
+        "n_train": 58140,
+        "offset": -0.6000003814697266,
+        "scale": 1.3343366384506226
+      },
+      "C5_bilirubin_direct_le_total": {
+        "vars": [
+          "Bilirubin_direct",
+          "Bilirubin_total"
+        ],
+        "kind": "ineq",
+        "tol": 0.0,
+        "unit": "mg/dL",
+        "n_train": 750,
+        "offset": 0.0,
+        "scale": 0.8895598649978638
+      },
+      "C6_SaO2_vs_SpO2": {
+        "vars": [
+          "SaO2",
+          "O2Sat"
+        ],
+        "kind": "eq",
+        "tol": 4.0,
+        "unit": "% points",
+        "n_train": 31890,
+        "offset": -2.0,
+        "scale": 2.9651999473571777
+      }
+    },
+    "B2A": {
+      "C1_MAP_formula": {
+        "vars": [
+          "MAP",
+          "SBP",
+          "DBP"
+        ],
+        "kind": "eq",
+        "tol": 10.0,
+        "unit": "mmHg",
+        "n_train": 549259,
+        "offset": 0.33333587646484375,
+        "scale": 4.4477996826171875
+      },
+      "C2_BP_ordering": {
+        "vars": [
+          "SBP",
+          "MAP",
+          "DBP"
+        ],
+        "kind": "ineq",
+        "tol": 0.0,
+        "unit": "mmHg",
+        "n_train": 549259,
+        "offset": 0.0,
+        "scale": 8.15429973602295
+      },
+      "C3_Henderson_Hasselbalch": {
+        "vars": [
+          "pH",
+          "HCO3",
+          "PaCO2"
+        ],
+        "kind": "eq",
+        "tol": 0.05,
+        "unit": "pH units",
+        "n_train": 1080,
+        "offset": -0.015186548233032227,
+        "scale": 0.016996348276734352
+      },
+      "C4_Hct_3xHgb": {
+        "vars": [
+          "Hct",
+          "Hgb"
+        ],
+        "kind": "eq",
+        "tol": 3.0,
+        "unit": "% points",
+        "n_train": 36992,
+        "offset": 0.40000152587890625,
+        "scale": 1.3343366384506226
+      },
+      "C5_bilirubin_direct_le_total": {
+        "vars": [
+          "Bilirubin_direct",
+          "Bilirubin_total"
+        ],
+        "kind": "ineq",
+        "tol": 0.0,
+        "unit": "mg/dL",
+        "n_train": 1478,
+        "offset": 0.0,
+        "scale": 0.39288896322250366
+      },
+      "C6_SaO2_vs_SpO2": {
+        "vars": [
+          "SaO2",
+          "O2Sat"
+        ],
+        "kind": "eq",
+        "tol": 4.0,
+        "unit": "% points",
+        "n_train": 10601,
+        "offset": -1.0,
+        "scale": 1.4825999736785889
+      }
+    }
+  }
+}

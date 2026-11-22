@@ -1,0 +1,11 @@
+,A,B,All
+patients,20336,20000,40336
+patient_hours,790215,761995,1552210
+"ICU hours per record, median [IQR]",39.0 [25.0–47.0],38.0 [23.0–47.0],38.0 [24.0–47.0]
+"age, median [IQR]",64.7 [52.3–75.7],62.0 [50.0–72.0],63.1 [51.0–74.0]
+"male, %",58.2,53.7,55.9
+"MICU / SICU / unit missing, %",26.3 / 26.9 / 46.8,34.6 / 34.9 / 30.5,30.4 / 30.9 / 38.7
+"septic, n (%)",1790 (8.80),1142 (5.71),2932 (7.27)
+"t_sepsis (row h), median [IQR]",34.0 [13.0–77.0],33.5 [9.0–79.0],34.0 [11.8–77.0]
+"septic with label at first row, n",203,223,426
+"septic with first label <= 6 h, n",436,342,778

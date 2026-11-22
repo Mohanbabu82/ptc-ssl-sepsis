@@ -1,0 +1,156 @@
+{
+  "ranges": {
+    "HR": [
+      20,
+      300
+    ],
+    "O2Sat": [
+      50,
+      100
+    ],
+    "Temp": [
+      25,
+      45
+    ],
+    "SBP": [
+      40,
+      300
+    ],
+    "MAP": [
+      20,
+      250
+    ],
+    "DBP": [
+      10,
+      200
+    ],
+    "Resp": [
+      3,
+      80
+    ],
+    "EtCO2": [
+      0,
+      100
+    ],
+    "BaseExcess": [
+      -40,
+      40
+    ],
+    "HCO3": [
+      2,
+      60
+    ],
+    "FiO2": [
+      0.21,
+      1.0
+    ],
+    "pH": [
+      6.5,
+      8.0
+    ],
+    "PaCO2": [
+      5,
+      150
+    ],
+    "SaO2": [
+      30,
+      100
+    ],
+    "AST": [
+      1,
+      20000
+    ],
+    "BUN": [
+      1,
+      300
+    ],
+    "Alkalinephos": [
+      1,
+      5000
+    ],
+    "Calcium": [
+      2,
+      20
+    ],
+    "Chloride": [
+      50,
+      160
+    ],
+    "Creatinine": [
+      0.1,
+      30
+    ],
+    "Bilirubin_direct": [
+      0,
+      50
+    ],
+    "Glucose": [
+      10,
+      2000
+    ],
+    "Lactate": [
+      0.1,
+      40
+    ],
+    "Magnesium": [
+      0.3,
+      10
+    ],
+    "Phosphate": [
+      0.2,
+      20
+    ],
+    "Potassium": [
+      1,
+      12
+    ],
+    "Bilirubin_total": [
+      0,
+      80
+    ],
+    "TroponinI": [
+      0,
+      500
+    ],
+    "Hct": [
+      5,
+      75
+    ],
+    "Hgb": [
+      1,
+      25
+    ],
+    "PTT": [
+      10,
+      250
+    ],
+    "WBC": [
+      0,
+      500
+    ],
+    "Fibrinogen": [
+      20,
+      2000
+    ],
+    "Platelets": [
+      1,
+      2000
+    ]
+  },
+  "verified_units": {
+    "FiO2": "fraction",
+    "Lactate": "mmol/L",
+    "Magnesium": "mg/dL",
+    "Calcium": "mg/dL (total)",
+    "Temp": "\u00b0C",
+    "Hct": "%",
+    "Hgb": "g/dL",
+    "Glucose": "mg/dL",
+    "Creatinine": "mg/dL",
+    "BUN": "mg/dL",
+    "Bilirubin_total": "mg/dL",
+    "PaCO2": "mmHg",
+    "SaO2": "%",
+    "O2Sat": "%"
+  }
+}

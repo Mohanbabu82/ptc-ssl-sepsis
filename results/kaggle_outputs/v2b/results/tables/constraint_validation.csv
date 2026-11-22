@@ -1,0 +1,13 @@
+constraint,hospital,n_co_measured,unit,type,tolerance,median_residual,mad,pct_within_tol,pass,pct_violations
+C1_MAP_formula,A,408016,mmHg,eq,10.0,-0.6666641235351562,2.1666641235351562,94.82348731422297,True,
+C1_MAP_formula,B,648174,mmHg,eq,10.0,0.33333587646484375,3.0,96.63732269421482,True,
+C2_BP_ordering,A,408016,mmHg,ineq,0.0,,,,True,1.6185639778832202
+C2_BP_ordering,B,648174,mmHg,ineq,0.0,,,,True,0.1896095801436034
+C3_Henderson_Hasselbalch,A,16516,pH units,eq,0.05,0.005177021026611328,0.019550800323486328,87.76338096391379,True,
+C3_Henderson_Hasselbalch,B,1287,pH units,eq,0.05,-0.01513814926147461,0.011143207550048828,94.7940947940948,True,
+C4_Hct_3xHgb,A,68503,% points,eq,3.0,-0.6000022888183594,0.8999977111816406,95.01627665941638,True,
+C4_Hct_3xHgb,B,43880,% points,eq,3.0,0.40000152587890625,0.8999977111816406,93.09936189608023,True,
+C5_bilirubin_direct_le_total,A,892,mg/dL,ineq,0.0,,,,True,0.0
+C5_bilirubin_direct_le_total,B,1760,mg/dL,ineq,0.0,,,,True,0.17045454545454544
+C6_SaO2_vs_SpO2,A,37446,% points,eq,4.0,-2.0,2.0,76.24579394327831,True,
+C6_SaO2_vs_SpO2,B,12439,% points,eq,4.0,-1.0,1.0,89.36409679234664,True,

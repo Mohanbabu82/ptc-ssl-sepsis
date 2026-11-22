@@ -1,0 +1,11 @@
+{
+  "accepted": [
+    "C1_MAP_formula",
+    "C2_BP_ordering",
+    "C3_Henderson_Hasselbalch",
+    "C4_Hct_3xHgb",
+    "C5_bilirubin_direct_le_total",
+    "C6_SaO2_vs_SpO2"
+  ],
+  "rejected": []
+}

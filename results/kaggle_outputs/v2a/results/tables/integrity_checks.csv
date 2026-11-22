@@ -1,0 +1,19 @@
+check,status,detail
+patient_count_A,PASS,"found=20336, expected=20336"
+patient_count_B,PASS,"found=20000, expected=20000"
+no_patient_id_overlap_A_B,PASS,overlap=0
+unique_ids_within_A,PASS,
+unique_ids_within_B,PASS,
+provider_md5_etag_match,PASS,"compared=40336, mismatches=0"
+all_headers_match_official_41_columns,PASS,[]
+no_empty_records,PASS,
+sepsis_label_binary,PASS,
+sepsis_label_non_decreasing_per_patient,PASS,violations=0
+iculos_hourly_steps,PASS,"patients with non-unit steps=0 (reported, not fatal)"
+Age_constant_within_patient,PASS,patients with >1 value=0
+Gender_constant_within_patient,PASS,patients with >1 value=0
+HospAdmTime_constant_within_patient,PASS,patients with >1 value=0
+gender_binary,PASS,
+hourly_rows_match_patient_table,PASS,
+t_sepsis_consistent,PASS,
+official_eval_script,PASS,downloaded sha256=26b8b26267ed32e8b7a7a27e45201cfc8c6640e717ba4cdc1f452b32f12b99e5

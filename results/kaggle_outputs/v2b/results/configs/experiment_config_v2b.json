@@ -1,0 +1,568 @@
+{
+  "CFG": {
+    "hidden": 96,
+    "batch": 256,
+    "lr": 0.001,
+    "pos_weight": 10.0,
+    "pre_epochs": 4,
+    "pre_windows_per_epoch": 120000,
+    "ft_max_epochs": 8,
+    "ft_rows_per_epoch": 100000,
+    "patience": 2,
+    "val_rows_cap": 60000,
+    "max_delta_h": 168.0,
+    "clip_z": 5.0,
+    "bootstrap_B": 2000,
+    "time_budget_h": 11.0
+  },
+  "SEEDS": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "POOLED_JOBS": [
+    {
+      "name": "main",
+      "fractions": [
+        0.05,
+        0.1,
+        1.0
+      ],
+      "arms": [
+        "lightgbm",
+        "supervised_gru",
+        "generic_ssl",
+        "ptc_ssl"
+      ]
+    },
+    {
+      "name": "ssl_baselines",
+      "fractions": [
+        0.05,
+        0.1,
+        1.0
+      ],
+      "arms": [
+        "ts2vec_gru",
+        "simmtm_gru",
+        "supervised_tf",
+        "ptc_tf"
+      ]
+    },
+    {
+      "name": "sensitivity",
+      "fractions": [
+        0.05
+      ],
+      "arms": [
+        "sens_lp_0",
+        "sens_lp_0.01",
+        "sens_lp_0.05",
+        "sens_lp_0.5",
+        "sens_lp_1",
+        "sens_lt_0",
+        "sens_lt_0.01",
+        "sens_lt_0.05",
+        "sens_lt_0.5",
+        "sens_lt_1",
+        "sens_hidden_64",
+        "sens_hidden_128",
+        "sens_hidden_256",
+        "sens_block_4",
+        "sens_block_12",
+        "sens_block_16",
+        "sens_mask_random",
+        "sens_mask_variable"
+      ]
+    }
+  ],
+  "EXT_JOBS": [
+    {
+      "name": "external",
+      "fractions": [
+        0.1,
+        1.0
+      ],
+      "arms": [
+        "lightgbm",
+        "supervised_gru",
+        "generic_ssl",
+        "ptc_ssl"
+      ]
+    },
+    {
+      "name": "external_diag",
+      "fractions": [
+        0.1
+      ],
+      "arms": [
+        "abl_missing_only",
+        "ptc_no_fio2",
+        "generic_uda",
+        "ptc_uda"
+      ]
+    }
+  ],
+  "VARIANTS": {
+    "supervised_gru": {
+      "ssl": "none",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "generic_ssl": {
+      "ssl": "ptc",
+      "mask": "random",
+      "lp": 0.0,
+      "lt": 0.0,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "ptc_ssl": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "fac_O": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.0,
+      "lt": 0.0,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "fac_P": {
+      "ssl": "ptc",
+      "mask": "random",
+      "lp": 0.1,
+      "lt": 0.0,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "fac_T": {
+      "ssl": "ptc",
+      "mask": "random",
+      "lp": 0.0,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "fac_OP": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.0,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "fac_OT": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.0,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "fac_PT": {
+      "ssl": "ptc",
+      "mask": "random",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "abl_values_only": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "values",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "abl_missing_only": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "missing",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "supervised_missing_only": {
+      "ssl": "none",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "missing",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "supervised_values_only": {
+      "ssl": "none",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "values",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "ptc_no_fio2": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "no_fio2",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "ts2vec_gru": {
+      "ssl": "ts2vec",
+      "mask": "random",
+      "lp": 0.0,
+      "lt": 0.0,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "simmtm_gru": {
+      "ssl": "simmtm",
+      "mask": "random",
+      "lp": 0.0,
+      "lt": 0.0,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.3,
+      "n_var": 4
+    },
+    "supervised_tf": {
+      "ssl": "none",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "tf",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "ptc_tf": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "tf",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "ptc_uda": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4,
+      "uda": true
+    },
+    "generic_uda": {
+      "ssl": "ptc",
+      "mask": "random",
+      "lp": 0.0,
+      "lt": 0.0,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4,
+      "uda": true
+    },
+    "sens_lp_0": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.0,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_lt_0": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.0,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_lp_0.01": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.01,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_lt_0.01": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.01,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_lp_0.05": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.05,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_lt_0.05": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.05,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_lp_0.5": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.5,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_lt_0.5": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.5,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_lp_1": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 1.0,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_lt_1": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 1.0,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_hidden_64": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 64,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_hidden_128": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 128,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_hidden_256": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 256,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_block_4": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 4,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_block_12": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 12,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_block_16": {
+      "ssl": "ptc",
+      "mask": "organ",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 16,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_mask_random": {
+      "ssl": "ptc",
+      "mask": "random",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    },
+    "sens_mask_variable": {
+      "ssl": "ptc",
+      "mask": "variable",
+      "lp": 0.1,
+      "lt": 0.1,
+      "input": "full",
+      "block": 8,
+      "hidden": 96,
+      "enc": "gru",
+      "mask_p": 0.15,
+      "n_var": 4
+    }
+  }
+}

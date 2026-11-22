@@ -1,0 +1,40 @@
+{
+  "exclude_label_at_first_row": true,
+  "split_seed": 2026,
+  "pooled_fracs": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "external_train_frac": 0.85,
+  "static_features": [
+    "Age",
+    "Gender",
+    "log_ICULOS"
+  ],
+  "excluded_columns": [
+    "Unit1",
+    "Unit2",
+    "HospAdmTime"
+  ],
+  "log1p_vars": [
+    "AST",
+    "BUN",
+    "Alkalinephos",
+    "Creatinine",
+    "Bilirubin_direct",
+    "Bilirubin_total",
+    "Glucose",
+    "Lactate",
+    "TroponinI",
+    "WBC",
+    "Fibrinogen",
+    "Platelets",
+    "PTT"
+  ],
+  "winsor_pct": [
+    0.5,
+    99.5
+  ],
+  "max_age_h": 168.0
+}

@@ -1,0 +1,52 @@
+{
+  "cardiovascular": [
+    "HR",
+    "SBP",
+    "MAP",
+    "DBP",
+    "TroponinI"
+  ],
+  "respiratory": [
+    "O2Sat",
+    "Resp",
+    "EtCO2",
+    "FiO2",
+    "SaO2",
+    "PaCO2"
+  ],
+  "acid_base_perfusion": [
+    "pH",
+    "HCO3",
+    "BaseExcess",
+    "Lactate"
+  ],
+  "renal_electrolyte": [
+    "BUN",
+    "Creatinine",
+    "Potassium",
+    "Chloride"
+  ],
+  "hepatic": [
+    "AST",
+    "Alkalinephos",
+    "Bilirubin_direct",
+    "Bilirubin_total"
+  ],
+  "hematologic_coagulation": [
+    "Hct",
+    "Hgb",
+    "Platelets",
+    "PTT",
+    "Fibrinogen"
+  ],
+  "metabolic": [
+    "Glucose",
+    "Calcium",
+    "Magnesium",
+    "Phosphate"
+  ],
+  "inflammation_thermoregulation": [
+    "Temp",
+    "WBC"
+  ]
+}

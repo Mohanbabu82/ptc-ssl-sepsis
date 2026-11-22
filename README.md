@@ -83,5 +83,6 @@ Reproduce: run the two full-run notebooks on Kaggle (GPU T4, internet on, Save &
 - `results/data/*.csv`: the same tables as CSV.
 - `results/logs/`: full Kaggle run logs and the parsed result lines (`v2a_lines.txt`, `v2b_lines.txt`).
 - `results/figures/`: all paper and report figures.
+- `results/kaggle_outputs/`: the original result packages written by the two Kaggle notebooks (tables, configurations, figures, training logs).
 
 No raw patient data are included. The data are available from PhysioNet: https://physionet.org/content/challenge-2019/1.0.0/ (CC BY 4.0).
