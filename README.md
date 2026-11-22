@@ -86,3 +86,10 @@ Reproduce: run the two full-run notebooks on Kaggle (GPU T4, internet on, Save &
 - `results/kaggle_outputs/`: the original result packages written by the two Kaggle notebooks (tables, configurations, figures, training logs).
 
 No raw patient data are included. The data are available from PhysioNet: https://physionet.org/content/challenge-2019/1.0.0/ (CC BY 4.0).
+
+## Public Kaggle notebooks
+
+- v2a core validity: https://www.kaggle.com/code/mohanbabu0329/haritha-cap-v2a-core-validity
+- v2b baselines and transfer: https://www.kaggle.com/code/mohanbabu0329/haritha-cap-v2b-baselines-transfer
+
+Each notebook's Output tab holds the full run output, including the hour-level test-set predictions (`artifacts/predictions_v2a/`, `artifacts/predictions_v2b/`, about 0.9 GB in total) that are too large for this repository.

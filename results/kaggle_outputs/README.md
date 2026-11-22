@@ -7,4 +7,4 @@ Unzipped contents of `PTC_SSL_V2A_RESULTS.zip` (notebook `ptc-ssl-v2a-core-valid
 - `results/figures/`: figures written by the notebooks.
 - `logs/`: per-run pretraining and fine-tuning loss curves.
 
-All files are aggregate statistics; no raw patient data are included. Hour-level test-set predictions (about 0.9 GB) remain in the notebooks' `artifacts/predictions_v2a` and `artifacts/predictions_v2b` output folders on Kaggle.
+All files are aggregate statistics; no raw patient data are included. Hour-level test-set predictions (about 0.9 GB) remain in the public Kaggle notebooks (https://www.kaggle.com/code/mohanbabu0329/haritha-cap-v2a-core-validity and https://www.kaggle.com/code/mohanbabu0329/haritha-cap-v2b-baselines-transfer), under `artifacts/predictions_v2a` and `artifacts/predictions_v2b` in the Output tab.
